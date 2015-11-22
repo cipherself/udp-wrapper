@@ -11,7 +11,7 @@ A wrapper around the Java UDP API to make it a little nicer.
 
 ```clojure
 (require '[udp-wrapper.core :refer [create-udp-server close-udp-server
-                                    empty-packet receive-loop]]])
+                                    empty-packet receive-loop]])
 
 ;; Listen on port 1024.
 (def socket (create-udp-server 1024))
