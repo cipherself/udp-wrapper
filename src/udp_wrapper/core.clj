@@ -38,8 +38,18 @@
 
 (defn create-udp-server
   "Make a UDP listening socket."
-  [port]
-  (DatagramSocket. port))
+  [port & [{:keys [broadcast? reuse-address? receive-buffer-size send-buffer-size
+                   so-timeout traffic-class]
+            :as   options}]]
+  (let [socket (DatagramSocket. port)]
+    (if-not (nil? broadcast?) (.setBroadcast socket broadcast?))
+    (if-not (nil? reuse-address?) (.setReuseAddress socket reuse-address?))
+    (if-not (nil? receive-buffer-size) (.setReceiveBufferSize socket broadcast?))
+    (if-not (nil? send-buffer-size) (.setSendBufferSize socket send-buffer-size))
+    (if-not (nil? so-timeout) (.setSoTimeout socket so-timeout))
+    (if-not (nil? traffic-class) (.setTrafficClass socket traffic-class))
+
+    socket))
 
 (defn close-udp-server
   "Close a UDP socket."
