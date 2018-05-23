@@ -48,7 +48,6 @@
     (if-not (nil? send-buffer-size) (.setSendBufferSize socket send-buffer-size))
     (if-not (nil? so-timeout) (.setSoTimeout socket so-timeout))
     (if-not (nil? traffic-class) (.setTrafficClass socket traffic-class))
-
     socket))
 
 (defn close-udp-server
