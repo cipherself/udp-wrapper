@@ -1,6 +1,6 @@
 (defproject udp-wrapper "0.1.1"
   :description "A wrapper around the Java UDP API to make it a little nicer."
-  :url "https://github.com/skeuomorf/udp-wrapper"
+  :url "https://github.com/muattiyah/udp-wrapper"
   :license {:name "MIT public license"
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.10.1"]]
