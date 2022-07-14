@@ -4,7 +4,7 @@ A wrapper around the Java UDP API to make it a little nicer.
 
 [![Clojars Project](https://clojars.org/udp-wrapper/latest-version.svg)](https://clojars.org/udp-wrapper)
 
-[Latest codox API docs](https://skeuomorf.github.io/udp-wrapper/)
+[Latest codox API docs](https://muattiyah.com/udp-wrapper/)
 
 ## Usage
 ### Server
@@ -28,14 +28,14 @@ A wrapper around the Java UDP API to make it a little nicer.
 
 ```clojure
 (require '[udp-wrapper.core :refer [create-udp-server close-udp-server
-                                    packet receive-loop get-bytes-utf8]]])
+                                    packet get-bytes-utf8 make-address]])
 
 ;; Open a socket to send and receive through it.
 (def socket (create-udp-server 1024))
 
 ;; Create a packet and send it.
-(packet (get-bytes-utf8 "You might receive this.") (make-address "127.0.0.1") 1337)
-(send-message socket packet)
+(def payload (packet (get-bytes-utf8 "You might receive this.") (make-address "127.0.0.1") 1337))
+(send-message socket payload)
 
 ;; Shutdown.
 (close-udp-server socket)
