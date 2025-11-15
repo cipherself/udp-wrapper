@@ -4,7 +4,7 @@ A wrapper around the Java UDP API to make it a little nicer.
 
 [![Clojars Project](https://clojars.org/udp-wrapper/latest-version.svg)](https://clojars.org/udp-wrapper)
 
-[Latest codox API docs](https://muattiyah.com/udp-wrapper/)
+[Latest codox API docs](https://mohamed.computer/udp-wrapper/)
 
 ## Usage
 ### Server
