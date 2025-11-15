@@ -5,5 +5,5 @@ log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 ## [Unreleased]
 
 ### Added
-- [#2](https:/github.com/muattiyah/udp-wrapper/issues/2): Expose the rest of DatagramSocket's options as a config map.
+- [#2](https:/github.com/muattiyah/cipherself/issues/2): Expose the rest of DatagramSocket's options as a config map.
 - .gitignore
