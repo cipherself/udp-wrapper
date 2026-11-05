@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file. This change
 log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
-## [0.1.3] - Unreleased
+## [0.1.3] - 2026-11-05
 
 ### Fixed
 - Apply the requested receive buffer size when creating a socket.

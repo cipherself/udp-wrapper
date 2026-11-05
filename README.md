@@ -8,8 +8,6 @@ A wrapper around the Java UDP API to make it a little nicer.
 
 ## Installation
 
-Version `0.1.3` is unreleased. Its coordinates are shown below.
-
 For Clojure CLI, add to `deps.edn`.
 
 ```clojure
