@@ -44,7 +44,7 @@
   (let [socket (DatagramSocket. port)]
     (if-not (nil? broadcast?) (.setBroadcast socket broadcast?))
     (if-not (nil? reuse-address?) (.setReuseAddress socket reuse-address?))
-    (if-not (nil? receive-buffer-size) (.setReceiveBufferSize socket broadcast?))
+    (if-not (nil? receive-buffer-size) (.setReceiveBufferSize socket receive-buffer-size))
     (if-not (nil? send-buffer-size) (.setSendBufferSize socket send-buffer-size))
     (if-not (nil? so-timeout) (.setSoTimeout socket so-timeout))
     (if-not (nil? traffic-class) (.setTrafficClass socket traffic-class))

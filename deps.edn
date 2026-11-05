@@ -1,3 +1,9 @@
-{:deps    {org.clojure/clojure {:mvn/version "1.11.1"}}
- :aliases {:dev {:extra-deps {org.clojure/tools.nrepl {:mvn/version "0.2.13"}}}}
- :paths   ["src"]}
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.6"}}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :main-opts ["-m" "udp-wrapper.test-runner"]}
+  :build {:deps {org.clojure/clojure {:mvn/version "1.12.6"}
+                 io.github.clojure/tools.build {:mvn/version "0.10.14"}
+                 slipset/deps-deploy {:mvn/version "0.2.5"}}
+          :ns-default build}}}

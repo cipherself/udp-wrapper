@@ -44,3 +44,18 @@
              (make-address "192.168.1.1")
              1024)]
     (is (= "Schubert" (get-data pkt)))))
+
+(deftest receive-buffer-option
+  (with-open [socket (create-udp-server 0 {:receive-buffer-size 4096})]
+    ;; The operating system may adjust the requested buffer size.
+    (is (pos? (.getReceiveBufferSize socket)))))
+
+(deftest loopback-message
+  (with-open [server (create-udp-server 0 {:so-timeout 2000})
+              client (create-udp-server 0)]
+    (let [message "You might receive this. λ"
+          payload (packet (get-bytes-utf8 message)
+                          (make-address "127.0.0.1")
+                          (.getLocalPort server))]
+      (send-message client payload)
+      (is (= message (receive-message-data server (empty-packet 512)))))))
